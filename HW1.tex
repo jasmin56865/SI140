@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{float} 
+\usepackage[a4paper, margin=2cm]{geometry}
 
 \begin{document}
 
@@ -15,10 +16,12 @@ $\{1,2,\ldots,n\}$ into $k$ nonempty, unlabeled subsets.Give a story proof for e
 
 \subsection*{(a)}
 
-prove
+Prove that
 \[
 S(n+1,k)=S(n,k-1)+kS(n,k).
 \]
+
+\textbf{solution:}
 
 Consider partitioning the set
 \[
@@ -61,15 +64,18 @@ the two cases are disjoint and cover all possible partitions
 \implies
 S(n+1,k)=S(n,k-1)+kS(n,k)
 \]
-
 \subsection*{(b)}
 
-prove 
+Prove that
 \[
-S(n,k)=
+S(n,k)
+=
 \sum_{j=k-1}^{n-1}
-\binom{n-1}{j}S(j,k-1).
+\binom{n-1}{j}
+S(j,k-1).
 \]
+
+\textbf{solution:}
 
 Consider partitioning
 \[
@@ -136,6 +142,9 @@ uniformly at random from all nonrepeat passwords. Let $p_m$ be the probability
 that the selected password uses all $m$ symbols.
 
 \subsection*{(a)}
+(a) Find an expression for $p_m$.
+
+\noindent\textbf{solution}
 
 For a password of length $\ell$, the number of the l-length password is
 \[
@@ -162,7 +171,19 @@ p_m
 \]
 
 \subsection*{(b)}
+(b) Show that
+\[
+p_m
+=
+\frac{1}{m\sum_{j=0}^{m-1}\frac{1}{j!}},
+\]
+and
+\[
+\lim_{m\to\infty} p_m=\frac{1}{e},
+\]
+where $e$ is the base of the natural logarithm.
 
+\noindent\textbf{Solution.}
 \[
 p_m
 =
@@ -254,6 +275,8 @@ Thus
 (Geometry Probability) You get a stick and break it randomly into three pieces. Two breaking points
 are chosen independently and uniformly. What is the probability that you can make a triangle using such
 three pieces?
+
+\noindent\textbf{Solution:}
 assume there are two breaking point, the  coordinates are X and Y,
 \[
 0<X<Y<1.
@@ -313,20 +336,126 @@ P
 
 \section*{Problem 4}
 
+\noindent\textbf{Problem 4 (20\%)}
+
+\medskip
+
+\noindent\textbf{(Birthday Problem)}
+In the birthday problem, we assumed that all 365 days of the year are equally likely
+(and excluded February 29). In reality, some days are slightly more likely as birthdays
+than others. For example, scientists have long struggled to understand why more babies
+are born 9 months after a holiday.
+
 Let
 \[
-\mathbf p=(p_1,p_2,\ldots,p_{365}),
-\qquad
-\sum_{j=1}^{365}p_j=1.
+\mathbf{p}=(p_1,p_2,\ldots,p_{365})
 \]
-
-Recall
+be the vector of birthday probabilities, with $p_j$ the probability of being born on
+the $j$th day of the year (February 29 is still excluded, with no offense intended to
+Leap Dayers). The $k$th elementary symmetric polynomial in the variables
+$x_1,\ldots,x_n$ is defined by
 \[
 e_k(x_1,\ldots,x_n)
 =
-\sum_{1\le j_1<\cdots<j_k\le n}
-x_{j_1}\cdots x_{j_k}.
+\sum_{1\le j_1<j_2<\cdots<j_k\le n}
+x_{j_1}\cdots x_{j_k},
+\qquad 2\le k\le 365.
 \]
+
+This just says to add up all of the
+\[
+\binom{n}{k}
+\]
+terms we can get by choosing and multiplying $k$ of the variables.
+
+For example,
+\[
+e_1(x_1,x_2,x_3)=x_1+x_2+x_3,
+\]
+\[
+e_2(x_1,x_2,x_3)=x_1x_2+x_1x_3+x_2x_3,
+\]
+and
+\[
+e_3(x_1,x_2,x_3)=x_1x_2x_3.
+\]
+
+Now let $k\ge 2$ be the number of people.
+
+\medskip
+
+\noindent
+(a) Find a simple expression for the probability that there is at least one birthday
+match, in terms of $\mathbf{p}$ and an elementary symmetric polynomial.
+
+\medskip
+
+\noindent
+(b) Explain intuitively why it makes sense that
+\[
+P(\text{at least one birthday match})
+\]
+is minimized when
+\[
+p_j=\frac{1}{365}
+\]
+for all $j$, by considering simple and extreme cases.
+
+\medskip
+
+\noindent
+(c) The famous arithmetic mean--geometric mean inequality says that for $x,y\ge 0$,
+\[
+\frac{x+y}{2}\ge \sqrt{xy}.
+\]
+
+This inequality follows from adding $4xy$ to both sides of
+\[
+x^2-2xy+y^2=(x-y)^2\ge 0.
+\]
+
+Define
+\[
+\mathbf{r}=(r_1,\ldots,r_{365})
+\]
+by
+\[
+r_1=r_2=\frac{p_1+p_2}{2},
+\qquad
+r_j=p_j
+\quad\text{for }3\le j\le 365.
+\]
+
+Using the arithmetic mean--geometric mean bound and the fact, which you should verify,
+that
+\[
+\begin{aligned}
+e_k(x_1,\ldots,x_n)
+={}&x_1x_2e_{k-2}(x_3,\ldots,x_n) \\
+&+(x_1+x_2)e_{k-1}(x_3,\ldots,x_n) \\
+&+e_k(x_3,\ldots,x_n),
+\end{aligned}
+\]
+show that
+\[
+P(\text{at least one birthday match}\mid \mathbf{p})
+\ge
+P(\text{at least one birthday match}\mid \mathbf{r})
+\]
+with strict inequality if $\mathbf{p}\ne\mathbf{r}$, where the given $\mathbf{r}$
+notation means that the birthday probabilities are given by $\mathbf{r}$.
+
+Using this, show that the value of $\mathbf{p}$ that minimizes the probability of at
+least one birthday match is given by
+\[
+p_j=\frac{1}{365}
+\]
+for all $j$.
+
+\bigskip
+
+\noindent\textbf{Solution:}
+
 
 \subsection*{(a)}
 Assume the event that at least one birthday match is A
@@ -552,28 +681,76 @@ p_j=\frac1{365}
 
 \section*{Problem 5}
 
-A card collection contains five different types of cards. Each independent draw
-produces card type $i$ with probability $p_i$, where
+
+\medskip
+
+A card collection contains five different types of cards. Each independent draw produces
+card type $i$ with probability $p_i$, where
 \[
-(p_1,p_2,p_3,p_4,p_5)
-=
-(0.05,0.15,0.20,0.25,0.35).
+(p_1,p_2,p_3,p_4,p_5)=(0.05,0.15,0.20,0.25,0.35).
 \]
 
-Let $Q_n$ denote the probability of collecting all five card types after $n$
-independent draws.
+Let $Q_n$ denote the probability of collecting all five card types after $n$ independent
+draws, $n\ge 1$.
 
 For each $i\in\{1,\ldots,5\}$, define
 \[
-E_i
-=
-\{\text{card type $i$ does not appear in the first $n$ draws}\}.
+E_i=\{\text{card type }i\text{ does not appear in the first }n\text{ draws}\}.
 \]
 
-For any $I\subseteq\{1,\ldots,5\}$, define
+For any index set
+\[
+I\subseteq\{1,\ldots,5\},
+\]
+define
 \[
 E_I=\bigcap_{i\in I}E_i.
 \]
+
+Thus, $E_I$ is the event that none of the card types whose indices belong to $I$
+appears in the first $n$ draws. By convention,
+\[
+E_{\emptyset}=\Omega,
+\]
+where $\Omega$ denotes the entire sample space.
+
+\medskip
+
+\noindent
+(a) Use the inclusion-exclusion principle to prove that
+\[
+Q_n
+=
+\sum_{I\subseteq\{1,\ldots,5\}}
+(-1)^{|I|}
+\left(
+1-\sum_{i\in I}p_i
+\right)^n,
+\]
+where $|I|$ denotes the number of elements in $I$.
+
+\medskip
+
+\noindent
+(b) Find the smallest integer $n$ such that
+\[
+Q_n\ge 0.90.
+\]
+You can write some code to calculate it. Include the screenshot of your code and output
+in the terminal which can support your answer.
+
+\medskip
+
+\noindent
+(c) Find the smallest $n$ for which the probability of collecting all five types is at
+least $0.90$ in the uniform case. (No need to include the code.) Write code to plot
+$Q_n$ as a function of $n$ for both equal and unequal $p_i$, along with their
+corresponding probabilities. (You should include the graph.) Compare $Q_n$ with the
+corresponding probability between the two cases.
+
+\bigskip
+
+\noindent\textbf{Solution:}
 
 \subsection*{(a)}
 

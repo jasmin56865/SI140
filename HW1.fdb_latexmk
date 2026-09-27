@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1790423156.05319 "/home/jasmin/latex/SI140/HW1.tex" "HW1.pdf" "HW1" 1790423156.72765 0
+["pdflatex"] 1790480902.76109 "/home/jasmin/latex/SI140/HW1.tex" "HW1.pdf" "HW1" 1790480903.43455 0
   "/etc/texmf/web2c/texmf.cnf" 1767974412.93893 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/jasmin/latex/SI140/HW1.tex" 1790423155.86934 10156 a002c101649398ccf705835605437b12 ""
+  "/home/jasmin/latex/SI140/HW1.tex" 1790480902.5676 14106 65bccb8c170224649b4cbeb5020a6a1e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -30,6 +30,8 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
+  "/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
+  "/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -43,6 +45,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1705352648 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
+  "/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def" 1663965824 19448 1e988b341dda20961a6b931bcde55519 ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty" 1654720880 18387 8f900a490197ebaf93c02ae9476d4b09 ""
@@ -55,8 +58,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1767974429.84904 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1767974450 8212058 ce752653d50ba33c8414fb4e45e8baa9 ""
-  "HW1.aux" 1790423156.68334 328 da3923b5be2eb8fa60c394e1507431e9 "pdflatex"
-  "HW1.tex" 1790423155.86934 10156 a002c101649398ccf705835605437b12 ""
+  "HW1.aux" 1790480903.38017 327 eefe2b4f6c7690171be30154fdc1e4db "pdflatex"
+  "HW1.tex" 1790480902.5676 14106 65bccb8c170224649b4cbeb5020a6a1e ""
   "P1.jpg" 1790066371.07351 65218 54f8f5c1fe192914647dbed090f5bef5 ""
   "P2.jpg" 1790074413.72903 40090 22fdcff2d03cf77f4aa49a7f5c40e7f5 ""
   "P3.png" 1790421606.37635 244838 b5ce1a05c878830245a84aef4fdf3156 ""

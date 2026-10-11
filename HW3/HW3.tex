@@ -1,0 +1,1368 @@
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+\section*{Problem}
+
+There are two states, Red and Blue, initially with 100
+residents each. Every resident supports exactly one of
+two parties, Democrat or Republican. Initially, 60
+residents of Blue and 30 residents of Red are Democrats.
+
+Ten residents move from Blue to Red, and nobody
+changes parties. Let $k$ be the number of Democrats
+among the ten people who move.
+
+Whenever a resident is selected, the selection is
+uniform over all 200 people. Let $D$ be the event
+that the selected resident is a Democrat, and let
+$B$ be the event that the resident lives in Blue
+at the time of selection.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Find $P(D\mid B)$, $P(D\mid B^c)$, and
+$P(D)$ before the move. Does the move change
+$P(D)$? Explain.
+
+\item Determine all integer values of $k$ for
+which the proportion of Democrats increases
+strictly in both states.
+
+Explain, using the law of total probability with
+the appropriate weights, how both proportions
+can increase while the overall proportion
+stays unchanged.
+
+\item For this part, take $k=5$ and consider
+the population after the move. A survey
+interviews the selected resident only if their
+name appears on a list containing all Blue
+residents and all Democrats in Red.
+
+Let $A$ be the event that the selected resident
+is on this list. Find $P(D\mid A)$ using the
+law of total probability conditional on $A$,
+with the partition $\{B,B^c\}$, and state
+the two group weights.
+
+Explain why this probability differs from the
+proportion of Democrats in the whole population.
+
+\end{enumerate}
+
+\section*{Solution}
+
+\subsection*{(a)}
+
+Before the move,
+
+\[
+\because\quad
+P(B)=P(B^c)=\frac{100}{200}=\frac12
+\]
+
+\[
+P(D\cap B)=\frac{60}{200},
+\qquad
+P(D\cap B^c)=\frac{30}{200}.
+\]
+
+By conditional probability,
+
+\[
+\begin{aligned}
+P(D\mid B)
+&=\frac{P(D\cap B)}{P(B)}\\
+&=\frac{60/200}{100/200}\\
+&=\frac35
+\end{aligned}
+\]
+
+Similarly,
+
+\[
+\begin{aligned}
+P(D\mid B^c)
+&=\frac{P(D\cap B^c)}{P(B^c)}\\
+&=\frac{30/200}{100/200}\\
+&=\frac3{10}
+\end{aligned}
+\]
+
+By the law of total probability,
+
+\[
+\begin{aligned}
+P(D)
+&=P(D\mid B)P(B)
+ +P(D\mid B^c)P(B^c)\\
+&=\frac35\cdot\frac12
+ +\frac3{10}\cdot\frac12\\
+&=\frac9{20}
+\end{aligned}
+\]
+
+After the move,
+
+\[
+\begin{aligned}
+P'(B)&=\frac{90}{200},\\
+P'(B^c)&=\frac{110}{200},\\
+P'(D\mid B)&=\frac{60-k}{90},\\
+P'(D\mid B^c)&=\frac{30+k}{110}.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\therefore\quad P'(D)
+&=P'(D\mid B)P'(B)
+ +P'(D\mid B^c)P'(B^c)\\
+&=\frac{60-k}{90}\cdot\frac{90}{200}
+ +\frac{30+k}{110}\cdot\frac{110}{200}\\
+&=\frac{60-k+30+k}{200}\\
+&=\frac{90}{200}\\
+&=\frac9{20}.
+\end{aligned}
+\]
+
+\[
+\Longrightarrow\quad
+P'(D)=P(D)=\frac9{20}
+\]
+
+The move changes neither the total population
+nor the total number of Democrats.
+
+\subsection*{(b)}
+
+After the move, the Democratic proportions are
+
+\[
+P'(D\mid B)=\frac{60-k}{90},
+\qquad
+P'(D\mid B^c)=\frac{30+k}{110}.
+\]
+
+For Blue,
+
+\[
+\begin{aligned}
+\frac{60-k}{90}&>\frac{60}{100}\\
+60-k&>54\\
+k&<6.
+\end{aligned}
+\]
+
+For Red,
+
+\[
+\begin{aligned}
+\frac{30+k}{110}&>\frac{30}{100}\\
+30+k&>33\\
+k&>3.
+\end{aligned}
+\]
+
+\[
+\because\quad
+3<k<6,\qquad k\in\mathbb Z
+\]
+
+\[
+\Longrightarrow\quad
+k\in\{4,5\}
+\]
+
+Before the move, the population weights are
+
+\[
+P(B)=\frac12,
+\qquad
+P(B^c)=\frac12.
+\]
+
+\[
+\begin{aligned}
+\therefore\quad P(D)
+&=\frac35\cdot\frac12
+ +\frac3{10}\cdot\frac12\\
+&=\frac9{20}.
+\end{aligned}
+\]
+
+After the move, the population weights become
+
+\[
+P'(B)=\frac9{20},
+\qquad
+P'(B^c)=\frac{11}{20}.
+\]
+
+By the law of total probability,
+
+\[
+\begin{aligned}
+P'(D)
+&=P'(D\mid B)P'(B)
+ +P'(D\mid B^c)P'(B^c)\\
+&=\frac{60-k}{90}\cdot\frac9{20}
+ +\frac{30+k}{110}\cdot\frac{11}{20}\\
+&=\frac{60-k}{200}
+ +\frac{30+k}{200}\\
+&=\frac9{20}.
+\end{aligned}
+\]
+
+For example, when $k=5$,
+
+\[
+\begin{aligned}
+P'(D\mid B)
+&=\frac{55}{90}
+>\frac{60}{100},\\[4pt]
+P'(D\mid B^c)
+&=\frac{35}{110}
+>\frac{30}{100}.
+\end{aligned}
+\]
+
+However,
+
+\[
+\begin{aligned}
+P'(D)
+&=\frac{55}{90}\cdot\frac{90}{200}
+ +\frac{35}{110}\cdot\frac{110}{200}\\
+&=\frac{55+35}{200}\\
+&=\frac9{20}.
+\end{aligned}
+\]
+
+\[
+\Longrightarrow\quad
+P'(D)=P(D)=0.45
+\]
+
+Both conditional proportions increase, but
+their population weights change from
+$(0.5,0.5)$ to $(0.45,0.55)$.
+
+The larger weight is assigned to the state
+with the lower Democratic proportion.
+The change in weights offsets the increases
+in the conditional proportions.
+
+\subsection*{(c)}
+
+\[
+\because\quad k=5
+\]
+
+After the move,
+
+\[
+\begin{array}{c|cc}
+&\text{Blue}&\text{Red}\\ \hline
+\text{Population}&90&110\\
+\text{Democrats}&55&35\\
+\text{Republicans}&35&75
+\end{array}
+\]
+
+The list contains all 90 Blue residents
+and the 35 Democrats in Red.
+
+\[
+\therefore\quad |A|=90+35=125.
+\]
+
+The two group weights conditional on $A$ are
+
+\[
+\begin{aligned}
+P(B\mid A)
+&=\frac{90}{125}
+=\frac{18}{25}\\[6pt]
+P(B^c\mid A)
+&=\frac{35}{125}
+=\frac7{25}
+\end{aligned}
+\]
+
+For the Blue group,
+
+\[
+\because\quad
+A\cap B=B
+\]
+
+\[
+\therefore\quad
+P(D\mid A\cap B)
+=\frac{55}{90}
+=\frac{11}{18}.
+\]
+
+For the Red group, every resident on the
+list is a Democrat.
+
+\[
+\therefore\quad
+P(D\mid A\cap B^c)=1.
+\]
+
+By the conditional law of total probability,
+
+\[
+\begin{aligned}
+P(D\mid A)
+&=P(D\mid A\cap B)P(B\mid A)\\
+&\quad+
+P(D\mid A\cap B^c)P(B^c\mid A)\\[4pt]
+&=\frac{55}{90}\cdot\frac{90}{125}
+ +1\cdot\frac{35}{125}\\[4pt]
+&=\frac{55+35}{125}\\
+&=\frac{90}{125}.
+\end{aligned}
+\]
+
+\[
+\Longrightarrow\quad
+P(D\mid A)=\frac{18}{25}=0.72
+\]
+
+For the whole population,
+
+\[
+P(D)=\frac{90}{200}=0.45.
+\]
+
+\[
+\because\quad
+|D\cap A|=90,\qquad
+|A|=125,\qquad
+|\Omega|=200
+\]
+
+\[
+\therefore\quad
+P(D\mid A)=\frac{90}{125}
+>
+\frac{90}{200}=P(D).
+\]
+
+The list excludes all 75 Republicans in Red
+but includes every Democrat.
+
+Thus, the selected group overrepresents
+Democrats relative to the whole population.
+
+\[
+\Longrightarrow\quad
+P(D\mid A)=0.72>0.45=P(D)
+\]
+
+
+\section*{Problem 2}
+
+A sequence of $n\geq 1$ mutually independent trials is
+performed. Each trial results in either success or failure,
+and the probability of success on trial $i$ is $p_i$,
+where $0\leq p_i\leq 1$.
+Let $A_n$ be the event that the number of successes
+among the first $n$ trials is even.
+
+\textbf{(a)}
+Find $P(A_2)$ by listing the possible outcomes,
+and show that
+\[
+P(A_2)=
+\frac{1+(1-2p_1)(1-2p_2)}{2}.
+\]
+
+\textbf{(b)}
+By considering whether the last trial succeeds or fails,
+obtain a recursion for $P(A_n)$ for $n\geq 2$.
+Use the recursion to prove that
+\[
+P(A_n)=
+\frac{1+\prod_{i=1}^{n}(1-2p_i)}{2}.
+\]
+
+You may use mathematical induction or repeated substitution
+in the recursion. State the initial value explicitly.
+
+\textbf{(c)}
+Under the independence assumption, is
+$P(A_n)=1/2$ if and only if at least one $p_i=1/2$?
+Justify your answer.
+Then remove the independence assumption and specify
+probabilities for the four possible outcomes of two trials
+so that $p_1=p_2=1/2$ but $P(A_2)\neq 1/2$.
+
+
+\subsection*{Solution}
+
+\textbf{(a)}
+
+Let $S$ and $F$ denote success and failure,
+respectively.
+
+The four possible outcomes are
+\[
+\{SS,SF,FS,FF\}.
+\]
+
+\[
+\begin{aligned}
+P(SS)&=p_1p_2,\\
+P(SF)&=p_1(1-p_2),\\
+P(FS)&=(1-p_1)p_2,\\
+P(FF)&=(1-p_1)(1-p_2).
+\end{aligned}
+\]
+
+\[
+A_2=\{SS,FF\}.
+\]
+
+\[
+\begin{aligned}
+\therefore\quad P(A_2)
+&=P(SS)+P(FF)\\
+&=p_1p_2+(1-p_1)(1-p_2)\\
+&=1-p_1-p_2+2p_1p_2\\
+&=\frac{2-2p_1-2p_2+4p_1p_2}{2}\\
+&=
+\frac{1+(1-2p_1)(1-2p_2)}{2}
+\end{aligned}
+\]
+
+
+
+\textbf{(b)}
+
+Let $S_n$ and $F_n$ denote success and failure
+on the $n$-th trial.
+
+\[
+A_n=
+(A_{n-1}\cap F_n)
+\cup
+(A_{n-1}^{c}\cap S_n).
+\]
+
+\[
+\begin{aligned}
+\therefore\quad P(A_n)
+&=P(A_{n-1}\cap F_n)
+ +P(A_{n-1}^{c}\cap S_n)\\
+&=P(A_{n-1})(1-p_n)
+ +[1-P(A_{n-1})]p_n\\
+&=(1-2p_n)P(A_{n-1})+p_n.
+\end{aligned}
+\]
+
+\textbf{Initial value:}
+
+\[
+P(A_1)=1-p_1.
+\]
+
+\textbf{Repeated substitution:}
+
+\[
+\begin{aligned}
+P(A_n)-\frac12
+&=(1-2p_n)P(A_{n-1})+p_n-\frac12\\
+&=(1-2p_n)\left(P(A_{n-1})-\frac12\right).
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\therefore\quad P(A_n)-\frac12
+&=(1-2p_n)\left(P(A_{n-1})-\frac12\right)\\
+&=(1-2p_n)(1-2p_{n-1})
+  \left(P(A_{n-2})-\frac12\right)\\
+&=\cdots\\
+&=\prod_{i=2}^{n}(1-2p_i)
+  \left(P(A_1)-\frac12\right)\\
+&=\prod_{i=2}^{n}(1-2p_i)
+  \left(\frac12-p_1\right)\\
+&=\frac12\prod_{i=2}^{n}(1-2p_i)(1-2p_1)\\
+&=\frac12\prod_{i=1}^{n}(1-2p_i).
+\end{aligned}
+\]
+
+\[
+\Rightarrow\quad
+P(A_n)=
+\frac{1+\prod_{i=1}^{n}(1-2p_i)}{2}
+\]
+
+
+\textbf{(c)}
+
+\textbf{Under independence:}
+
+\[
+P(A_n)=
+\frac{1+\prod_{i=1}^{n}(1-2p_i)}{2}.
+\]
+
+\[
+\begin{aligned}
+P(A_n)=\frac12
+&\Longleftrightarrow
+1+\prod_{i=1}^{n}(1-2p_i)=1\\
+&\Longleftrightarrow
+\prod_{i=1}^{n}(1-2p_i)=0\\
+&\Longleftrightarrow
+\exists\,i\in\{1,\ldots,n\},
+\quad 1-2p_i=0\\
+&\Longleftrightarrow
+\exists\,i\in\{1,\ldots,n\},
+\quad p_i=\frac12.
+\end{aligned}
+\]
+
+\[
+\therefore\quad
+P(A_n)=\frac12
+\Longleftrightarrow
+\exists\,i,\quad p_i=\frac12
+\]
+
+\textbf{Without independence:}
+
+Consider the joint distribution
+\[
+\begin{aligned}
+P(SS)&=\frac12,\\
+P(SF)&=0,\\
+P(FS)&=0,\\
+P(FF)&=\frac12.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+p_1
+&=P(SS)+P(SF)\\
+&=\frac12+0=\frac12,
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+p_2
+&=P(SS)+P(FS)\\
+&=\frac12+0=\frac12.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+P(A_2)
+&=P(SS)+P(FF)\\
+&=\frac12+\frac12\\
+&=1\neq\frac12.
+\end{aligned}
+\]
+
+\[
+\because\quad
+P(SS)=\frac12
+\neq p_1p_2=\frac14,
+\]
+
+\[
+\therefore\quad
+\text{the two trials are not independent}.
+\]
+
+\[
+p_1=p_2=\frac12,
+\qquad
+P(A_2)=1\neq\frac12.
+\]
+
+
+
+\section*{Problem 3}
+
+To battle against spam, Bob installs two anti-spam programs.
+An email is either legitimate (event $L$) or spam (event $L^c$).
+Let $M_j$ be the event that program $j$ marks the email as
+legitimate, for $j=1,2$. Assume that
+\[
+P(L)=0.10,\qquad
+P(M_j\mid L)=P(M_j^c\mid L^c)=0.90
+\quad (j=1,2).
+\]
+
+The two programs process the same email.
+Their outputs are conditionally independent given $L$,
+and also conditionally independent given $L^c$.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Find $P(L\mid M_1)$ and simplify your answer.
+
+\item Find $P(L\mid M_1\cap M_2)$ and
+$P(L\mid M_1\cap M_2^c)$.
+Compare each with the prior probability $P(L)$.
+
+\item Are $M_1$ and $M_2$ independent without
+conditioning on the email's true status?
+Prove your answer by computing the required probabilities.
+Explain why your answer is consistent with the stated
+conditional independence.
+
+\end{enumerate}
+
+\section*{Solution}
+
+\noindent
+\textbf{(a)}
+
+\[
+\because\quad
+P(L^c)=0.90,\qquad
+P(M_1\mid L^c)=0.10.
+\]
+
+By the law of total probability,
+\begin{align*}
+P(M_1)
+&=P(M_1\mid L)P(L)
+ +P(M_1\mid L^c)P(L^c)\\
+&=0.90(0.10)+0.10(0.90)\\
+&=0.18.
+\end{align*}
+
+By Bayes' theorem,
+\begin{align*}
+P(L\mid M_1)
+&=\frac{P(M_1\mid L)P(L)}{P(M_1)}\\
+&=\frac{0.90(0.10)}{0.18}\\
+&=\frac{1}{2}.
+\end{align*}
+
+\[
+\therefore\quad P(L\mid M_1)=0.50.
+\]
+
+
+\bigskip
+\noindent
+\textbf{(b)}
+
+\textbf{Case 1:} $P(L\mid M_1\cap M_2)$.
+
+By conditional independence,
+\begin{align*}
+P(M_1\cap M_2\mid L)
+&=P(M_1\mid L)P(M_2\mid L)\\
+&=0.90^2=0.81,\\[4pt]
+P(M_1\cap M_2\mid L^c)
+&=P(M_1\mid L^c)P(M_2\mid L^c)\\
+&=0.10^2=0.01.
+\end{align*}
+
+\begin{align*}
+P(M_1\cap M_2)
+&=P(M_1\cap M_2\mid L)P(L)\\
+&\quad+P(M_1\cap M_2\mid L^c)P(L^c)\\
+&=0.81(0.10)+0.01(0.90)\\
+&=0.09.
+\end{align*}
+
+By Bayes' theorem,
+\begin{align*}
+P(L\mid M_1\cap M_2)
+&=\frac{P(M_1\cap M_2\mid L)P(L)}
+{P(M_1\cap M_2)}\\
+&=\frac{0.81(0.10)}{0.09}\\
+&=0.90.
+\end{align*}
+
+\[
+\therefore\quad
+P(L\mid M_1\cap M_2)=0.90>P(L)=0.10.
+\]
+
+
+\medskip
+\textbf{Case 2:} $P(L\mid M_1\cap M_2^c)$.
+
+By conditional independence,
+\begin{align*}
+P(M_1\cap M_2^c\mid L)
+&=P(M_1\mid L)P(M_2^c\mid L)\\
+&=0.90(0.10)=0.09,\\[4pt]
+P(M_1\cap M_2^c\mid L^c)
+&=P(M_1\mid L^c)P(M_2^c\mid L^c)\\
+&=0.10(0.90)=0.09.
+\end{align*}
+
+\begin{align*}
+P(M_1\cap M_2^c)
+&=P(M_1\cap M_2^c\mid L)P(L)\\
+&\quad+P(M_1\cap M_2^c\mid L^c)P(L^c)\\
+&=0.09(0.10)+0.09(0.90)\\
+&=0.09.
+\end{align*}
+
+By Bayes' theorem,
+\begin{align*}
+P(L\mid M_1\cap M_2^c)
+&=\frac{P(M_1\cap M_2^c\mid L)P(L)}
+{P(M_1\cap M_2^c)}\\
+&=\frac{0.09(0.10)}{0.09}\\
+&=0.10.
+\end{align*}
+
+\[
+\therefore\quad
+P(L\mid M_1\cap M_2^c)=P(L)=0.10.
+\]
+
+
+\bigskip
+\noindent
+\textbf{(c)}
+
+By the law of total probability,
+\begin{align*}
+P(M_1)
+&=0.90(0.10)+0.10(0.90)\\
+&=0.18,\\[4pt]
+P(M_2)
+&=0.90(0.10)+0.10(0.90)\\
+&=0.18.
+\end{align*}
+
+\[
+\therefore\quad
+P(M_1)P(M_2)=0.18^2=0.0324.
+\]
+
+From part (b),
+\[
+P(M_1\cap M_2)=0.09.
+\]
+
+\[
+\because\quad
+P(M_1\cap M_2)=0.09
+\neq 0.0324=P(M_1)P(M_2),
+\]
+
+\[
+\therefore\quad
+M_1\text{ and }M_2\text{ are not independent.}
+\]
+
+However, conditional independence gives
+\[
+P(M_1\cap M_2\mid L)
+=P(M_1\mid L)P(M_2\mid L)
+=0.81,
+\]
+
+\[
+P(M_1\cap M_2\mid L^c)
+=P(M_1\mid L^c)P(M_2\mid L^c)
+=0.01.
+\]
+
+Moreover,
+\begin{align*}
+P(M_2\mid M_1)
+&=\frac{P(M_1\cap M_2)}{P(M_1)}\\
+&=\frac{0.09}{0.18}=0.50
+\neq P(M_2)=0.18.
+\end{align*}
+
+But
+\[
+P(M_2\mid M_1,L)=P(M_2\mid L)=0.90,
+\]
+
+\[
+P(M_2\mid M_1,L^c)=P(M_2\mid L^c)=0.10.
+\]
+
+Thus, the programs are conditionally independent
+given the true email status, but not independent
+without conditioning, because both outputs depend
+on the same underlying email status.
+
+
+
+\section*{Problem4}
+
+Consider a simplified model of an AI evaluation. In one run,
+an AI system answers two questions. Write $C$ for correct
+and $I$ for incorrect; the ordered outcomes $CC,CI,IC,II$
+also denote the corresponding events.
+
+In parts (a) and (b), each answer is correct with probability
+$1/2$, independently of the other, so the four outcomes
+are equally likely.
+
+An evaluator checks both answers against an answer key
+and may publish one of the following reports.
+Let $M_C$ and $M_I$ denote the events that the
+corresponding reports are published:
+\[
+\begin{aligned}
+M_C &: \quad \text{``At least one answer is correct''},\\
+M_I &: \quad \text{``At least one answer is incorrect''}.
+\end{aligned}
+\]
+
+At most one report is published per run, and every
+published report must be true.
+
+\textbf{(a)}
+Initially, every run is reported. For $CC$, the evaluator
+publishes $M_C$; for $II$, the evaluator publishes $M_I$.
+For either $CI$ or $IC$, a fair coin is used to choose
+between the two reports, each with probability $1/2$.
+
+Using Bayes' rule, find
+\[
+P(CC\mid M_C)
+\qquad\text{and}\qquad
+P(II\mid M_I).
+\]
+
+\textbf{(b)}
+Replace the rule in part (a) by any randomized reporting
+rule based on the outcome. The evaluator may choose not
+to publish a report for any of the four outcomes.
+The two reports must each have positive probability
+and must satisfy
+\[
+P(CC\mid M_C)\geq\frac23,
+\qquad
+P(II\mid M_I)\geq\frac34.
+\]
+
+What is the smallest possible probability that no report
+is published? Specify a reporting rule for each of
+$CC,CI,IC,II$ that attains your answer, and prove that
+no admissible rule can do better.
+
+\textbf{(c)}
+Remove the independence assumption, but keep each
+answer's probability of being correct equal to $1/2$.
+The evaluator may choose a new randomized reporting
+rule, but must publish exactly one truthful report
+per run, with both report types having positive probability.
+
+Let $t=P(CC)$. Determine all values of $t$ for which
+such a rule satisfies both posterior inequalities
+in part (b).
+
+Prove necessity and sufficiency, giving a valid rule
+for every claimed value of $t$. The rule may depend on $t$.
+
+\section*{Solution}
+
+\subsection*{(a)}
+
+\[
+P(CC)=P(CI)=P(IC)=P(II)=\frac14.
+\]
+
+\[
+\begin{aligned}
+P(M_C\mid CC)&=1,\\
+P(M_C\mid CI)&=\frac12,\\
+P(M_C\mid IC)&=\frac12,\\
+P(M_C\mid II)&=0.
+\end{aligned}
+\]
+
+By the law of total probability,
+\[
+\begin{aligned}
+P(M_C)
+&=\sum_{\omega\in\{CC,CI,IC,II\}}
+P(M_C\mid\omega)P(\omega)\\
+&=1\cdot\frac14
++\frac12\cdot\frac14
++\frac12\cdot\frac14
++0\cdot\frac14\\
+&=\frac12.
+\end{aligned}
+\]
+
+By Bayes' rule,
+\[
+\begin{aligned}
+P(CC\mid M_C)
+&=\frac{P(M_C\mid CC)P(CC)}{P(M_C)}\\
+&=\frac{1\cdot\frac14}{\frac12}\\
+&=\frac12.
+\end{aligned}
+\]
+
+Similarly,
+\[
+\begin{aligned}
+P(M_I)
+&=0\cdot\frac14
++\frac12\cdot\frac14
++\frac12\cdot\frac14
++1\cdot\frac14\\
+&=\frac12.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+P(II\mid M_I)
+&=\frac{P(M_I\mid II)P(II)}{P(M_I)}\\
+&=\frac{1\cdot\frac14}{\frac12}\\
+&=\frac12.
+\end{aligned}
+\]
+
+\[
+\therefore\quad
+P(CC\mid M_C)=P(II\mid M_I)=\frac12.
+\]
+
+
+\subsection*{(b)}
+
+Let $N$ denote the event that no report is published.
+
+\[
+P(CC\mid M_C)\geq\frac23
+\]
+
+\[
+\implies
+\frac{P(CC\cap M_C)}{P(M_C)}
+\geq\frac23
+\]
+
+\[
+\implies
+P(M_C)\leq\frac32P(CC\cap M_C).
+\]
+
+\[
+\because\quad
+P(CC\cap M_C)\leq P(CC)=\frac14
+\]
+
+\[
+\therefore\quad
+P(M_C)\leq\frac32\cdot\frac14=\frac38.
+\]
+
+Similarly,
+\[
+P(II\mid M_I)\geq\frac34
+\]
+
+\[
+\implies
+P(M_I)\leq\frac43P(II\cap M_I).
+\]
+
+\[
+\because\quad
+P(II\cap M_I)\leq P(II)=\frac14
+\]
+
+\[
+\therefore\quad
+P(M_I)\leq\frac43\cdot\frac14=\frac13.
+\]
+
+\[
+\because\quad M_C\cap M_I=\varnothing
+\]
+
+\[
+\begin{aligned}
+P(N)
+&=1-P(M_C)-P(M_I)\\
+&\geq1-\frac38-\frac13\\
+&=\frac7{24}.
+\end{aligned}
+\]
+
+\textbf{Achievability:}
+
+Consider the following reporting rule:
+\[
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{c|ccc}
+\omega
+&P(M_C\mid\omega)
+&P(M_I\mid\omega)
+&P(N\mid\omega)\\
+\hline
+CC&1&0&0\\
+CI&\frac14&\frac16&\frac7{12}\\
+IC&\frac14&\frac16&\frac7{12}\\
+II&0&1&0
+\end{array}
+\]
+
+\[
+\begin{aligned}
+P(M_C)
+&=\frac14\left(1+\frac14+\frac14\right)\\
+&=\frac38,
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+P(M_I)
+&=\frac14\left(\frac16+\frac16+1\right)\\
+&=\frac13.
+\end{aligned}
+\]
+
+\[
+P(CC\mid M_C)
+=\frac{P(CC\cap M_C)}{P(M_C)}
+=\frac{\frac14}{\frac38}
+=\frac23.
+\]
+
+\[
+P(II\mid M_I)
+=\frac{P(II\cap M_I)}{P(M_I)}
+=\frac{\frac14}{\frac13}
+=\frac34.
+\]
+
+\[
+\begin{aligned}
+P(N)
+&=1-P(M_C)-P(M_I)\\
+&=1-\frac38-\frac13\\
+&=\frac7{24}.
+\end{aligned}
+\]
+
+\[
+\therefore\quad
+\min P(N)=\frac7{24}.
+\]
+
+
+\subsection*{(c)}
+
+Let
+\[
+t=P(CC).
+\]
+
+\[
+P(C_1)=P(C_2)=\frac12,
+\]
+where $C_1,C_2$ denote correctness of the first
+and second answers.
+
+\[
+\begin{aligned}
+P(CI)&=P(C_1)-P(CC)=\frac12-t,\\
+P(IC)&=P(C_2)-P(CC)=\frac12-t.
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+P(II)
+&=1-P(CC)-P(CI)-P(IC)\\
+&=1-t-2\left(\frac12-t\right)\\
+&=t.
+\end{aligned}
+\]
+
+Thus,
+\[
+\begin{aligned}
+P(CC)&=t,\\
+P(CI)&=\frac12-t,\\
+P(IC)&=\frac12-t,\\
+P(II)&=t,
+\end{aligned}
+\qquad
+0\leq t\leq\frac12.
+\]
+
+\textbf{Necessity:}
+
+Let
+\[
+p=P(M_C).
+\]
+
+Exactly one truthful report is published per run:
+\[
+P(M_I)=1-p,
+\qquad 0<p<1.
+\]
+
+\[
+P(M_C\mid CC)=1,
+\qquad
+P(M_I\mid II)=1.
+\]
+
+\[
+\implies
+P(CC\cap M_C)=t,
+\qquad
+P(II\cap M_I)=t.
+\]
+
+The first posterior constraint gives
+\[
+P(CC\mid M_C)=\frac{t}{p}\geq\frac23
+\]
+
+\[
+\implies\quad
+p\leq\frac32t.
+\]
+
+The second posterior constraint gives
+\[
+P(II\mid M_I)=\frac{t}{1-p}\geq\frac34
+\]
+
+\[
+\implies\quad
+1-p\leq\frac43t
+\]
+
+\[
+\implies\quad
+p\geq1-\frac43t.
+\]
+
+\[
+\therefore\quad
+1-\frac43t\leq p\leq\frac32t.
+\]
+
+\[
+\implies
+1-\frac43t\leq\frac32t
+\]
+
+\[
+\implies
+1\leq\frac{17}{6}t
+\]
+
+\[
+\implies
+t\geq\frac6{17}.
+\]
+
+\[
+\because\quad t\leq\frac12
+\]
+
+\[
+\therefore\quad
+\frac6{17}\leq t\leq\frac12.
+\]
+
+
+\textbf{Sufficiency:}
+
+For every
+\[
+t\in\left[\frac6{17},\frac12\right],
+\]
+define
+\[
+q(t)=
+\begin{cases}
+\dfrac{t}{2(1-2t)},
+&\dfrac6{17}\leq t\leq\dfrac25,\\[8pt]
+1,
+&\dfrac25<t\leq\dfrac12.
+\end{cases}
+\]
+
+Then
+\[
+0\leq q(t)\leq1.
+\]
+
+Consider the reporting rule:
+\[
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{c|cc}
+\omega
+&P(M_C\mid\omega)
+&P(M_I\mid\omega)\\
+\hline
+CC&1&0\\
+CI&q(t)&1-q(t)\\
+IC&q(t)&1-q(t)\\
+II&0&1
+\end{array}
+\]
+
+Each row sums to $1$, and every report is truthful.
+
+\textbf{Case 1:}
+\[
+\frac6{17}\leq t\leq\frac25.
+\]
+
+\[
+\begin{aligned}
+P(M_C)
+&=t+2\left(\frac12-t\right)q(t)\\
+&=t+(1-2t)\frac{t}{2(1-2t)}\\
+&=\frac32t.
+\end{aligned}
+\]
+
+\[
+P(M_I)=1-\frac32t.
+\]
+
+\[
+P(CC\mid M_C)
+=\frac{t}{\frac32t}
+=\frac23.
+\]
+
+\[
+P(II\mid M_I)
+=\frac{t}{1-\frac32t}.
+\]
+
+\[
+\because\quad
+t\geq\frac6{17}
+\]
+
+\[
+\implies
+\frac{17}{2}t\geq3
+\]
+
+\[
+\implies
+4t\geq3-\frac92t
+\]
+
+\[
+\implies
+\frac{t}{1-\frac32t}\geq\frac34.
+\]
+
+\[
+\therefore\quad
+P(CC\mid M_C)\geq\frac23,
+\qquad
+P(II\mid M_I)\geq\frac34.
+\]
+
+
+\textbf{Case 2:}
+\[
+\frac25<t\leq\frac12.
+\]
+
+\[
+q(t)=1.
+\]
+
+\[
+\begin{aligned}
+P(M_C)
+&=P(CC)+P(CI)+P(IC)\\
+&=t+2\left(\frac12-t\right)\\
+&=1-t.
+\end{aligned}
+\]
+
+\[
+P(M_I)=P(II)=t.
+\]
+
+\[
+P(CC\mid M_C)=\frac{t}{1-t}.
+\]
+
+\[
+\because\quad t>\frac25
+\]
+
+\[
+\implies
+5t>2
+\]
+
+\[
+\implies
+3t>2(1-t)
+\]
+
+\[
+\implies
+\frac{t}{1-t}>\frac23.
+\]
+
+Furthermore,
+\[
+P(II\mid M_I)=\frac{t}{t}=1\geq\frac34.
+\]
+
+\[
+\therefore\quad
+P(CC\mid M_C)\geq\frac23,
+\qquad
+P(II\mid M_I)\geq\frac34.
+\]
+
+In both cases,
+\[
+P(M_C)>0,
+\qquad
+P(M_I)>0.
+\]
+
+Combining necessity and sufficiency,
+\[
+\therefore\quad
+t\in\left[\frac6{17},\frac12\right].
+\]
+
+
+
+
+\end{document}
